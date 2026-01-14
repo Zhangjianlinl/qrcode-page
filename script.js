@@ -41,15 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return /wxwork/i.test(navigator.userAgent);
     }
 
-    // 检测环境并显示提示
-    if (!isWechat() && !isAlipay() && !isWorkWechat()) {
-        // 不在微信/支付宝中，显示提示
-        const tip = document.querySelector('.qrcode-section .tip');
-        if (tip) {
-            tip.innerHTML = '请在微信或支付宝中打开，长按识别付款<br><span style="font-size: 12px; color: #999;">或截图后使用扫一扫</span>';
-        }
-    }
-
     // 根据环境显示不同提示
     if (isWorkWechat()) {
         console.log('当前在企业微信环境');
